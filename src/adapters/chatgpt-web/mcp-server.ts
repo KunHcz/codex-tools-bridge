@@ -337,7 +337,7 @@ function nativeCatalogJsonObjects(response: {
   if (response.isError) {
     throw new Error(`Native nested tool inventory failed: ${textBlocks.join("\n") || "unknown error"}`);
   }
-  // Current native exec adds a timing/status text block before text() output.
+  // The native gateway adds a timing/status text block before text() output.
   // Accept exactly one catalog JSON payload, retaining strict ambiguity checks.
   const candidates: unknown[] = [];
   for (const block of textBlocks) {
