@@ -54,6 +54,12 @@ Use Bun 1.3.11 for the tested baseline. The local development host used Codex CL
 
 **Continue with the [installation guide](docs/SETUP.md).** It covers a fresh dedicated workspace, explicit Desktop initialization, the official tunnel profile, connecting a private ChatGPT plugin, and a harmless acceptance check. No personal runtime profile or credentials are distributed.
 
+### Codex plugin
+
+This repository includes a Codex plugin manifest, vector icon, and the `codex-tools-bridge` setup/diagnostic skill. Once installed through a compatible plugin marketplace, invoke `$codex-tools-bridge` to follow the setup guide or inspect an existing connection.
+
+The skill guides setup of the bridge in a separate source checkout. Plugin installation does not start a Tunnel or grant tool access. Native workspace-write/on-request and `configured` tool access remain the defaults; `--tool-access all` requires an explicit broader grant.
+
 ## Design boundaries
 
 “No second model loop” does **not** mean “no Codex runtime.” The implementation still uses a native Codex task/turn and a localhost Responses driver to obtain real tool context, native permissions, and results. It does not reuse the upstream browser-driven conversation orchestrator, copy browser cookies, or supply another model provider for reasoning.
