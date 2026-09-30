@@ -57,6 +57,12 @@ bun src/cli.ts --help
 
 然后按 [完整安装说明](docs/SETUP.md) 初始化专用工作目录、准备 Desktop 宿主、配置 Tunnel，并在 ChatGPT 中连接私有插件。仓库不包含任何人的密钥、运行时配置、聊天记录或浏览器登录数据。
 
+### Codex 插件
+
+仓库包含 Codex 插件 manifest、矢量图标和 `codex-tools-bridge` 安装与诊断技能。通过兼容的插件市场安装后，调用 `$codex-tools-bridge`，按安装说明初始化独立实例或检查已有连接。
+
+技能指导用户在单独的源码 checkout 中配置桥接。安装插件不会启动 Tunnel 或扩大工具权限。原生 workspace-write/on-request 与 `configured` 工具访问仍是默认值；`--tool-access all` 需要用户明确授予更广权限。
+
 ## 有意不做的事
 
 不接管网页对话，不把完整提示词注入另一个浏览器会话，不复制 ChatGPT Cookie，不再跑一套模型推理循环。
